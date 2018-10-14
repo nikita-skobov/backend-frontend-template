@@ -3,6 +3,7 @@ module.exports = {
     "rules": {
         "semi": [2, "never"],
         "linebreak-style": ["off"],
-        "no-console": ["off"]
+        "no-console": ["off"],
+        "arrow-body-style": ["off", "as-needed"],
     },
 };

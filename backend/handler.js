@@ -1,9 +1,13 @@
 // eslint-disable-next-line
 'use strict';
 
+const functions = require('./functions/functions')
+
 module.exports.hello = async (event, context) => {
   const body = JSON.parse(event.body)
   const message = `Hello ${body.name}`
+  const params = await functions.makeParams(event)
+  await functions.putDatabase(params)
   const result = {
     statusCode: 200,
     body: JSON.stringify({
